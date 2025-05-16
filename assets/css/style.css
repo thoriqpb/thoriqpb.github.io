@@ -1880,3 +1880,18 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
+
+.point-list {
+  margin: 10px 0 1em 0;
+  padding-left: 0;           /* Remove left padding */
+  list-style: disc inside;   /* Dots aligned with text */
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+}
+
+.point-list li {
+  margin-bottom: 0.5em;
+  padding-left: 0;           /* No extra indent on li */
+}
