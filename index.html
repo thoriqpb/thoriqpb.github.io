@@ -23,9 +23,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Add this in your <head> section for Vanta.js dependencies -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
 </head>
 
 <body>
+  <!-- Add this as the first child of <body> for the Vanta background -->
+  <div id="vanta-bg" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-1;"></div>
 
   <!--
     - #MAIN
@@ -1351,30 +1357,28 @@
     - custom js link
   -->
   <script src="./assets/js/script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bubbly-bg@1.0.0/dist/bubbly-bg.min.js"></script>
-  <script>
-    bubbly({
-      colorStart: "#050517",
-      colorStop: "#181b2c",
-      bubbleFunc: () =>
-        `hsla(${210 + Math.random() * 30}, 100%, ${60 + Math.random() * 10}%, .25)`,
-      bubbles: 200, // more bubbles for a denser look
-      blur: 10,
-      compose: "source-over",
-      angle: 0,
-      minRadius: 0.5, // smaller minimum radius
-      maxRadius: 1,   // smaller maximum radius
-      velocityFunc: () => 0.2 + Math.random() * 0.5, // much faster bubbles
-      radiusFunc: () => 1 + Math.random() * window.innerWidth / 40 // custom radius
-    });
-  </script>
-
   <!--
     - ionicon linkasdasdasd
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+  <!-- Place this script after your main content, before </body> -->
+  <script>
+    VANTA.NET({
+      el: "#vanta-bg",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0x339cff,
+      backgroundColor: 0x070707,
+      spacing: 15.00
+    })
+  </script>
 </body>
 
 </html>
