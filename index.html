@@ -26,6 +26,7 @@
 </head>
 
 <body>
+  <div class="animated-bg-geometric"></div>
 
   <!--
     - #MAIN
@@ -1313,7 +1314,7 @@
         <section class="mapbox" data-mapbox>
           <figure>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.07098743827868!2d110.37429972824137!3d-7.775421926777412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a59d1b10eefdd%3A0xe65afca3cae0ac31!2sDepartment%20of%20Electrical%20Engineering%20and%20Informatics%20Engineering%2C%20Vocational%20School%2C%20Gadjah%20Mada%20University!5e0!3m2!1sen!2sid!4v1749661130725!5m2!1sen!2sid"
               width="400" height="300" loading="lazy"></iframe>
           </figure>
         </section>
@@ -1356,6 +1357,101 @@
     - custom js link
   -->
   <script src="./assets/js/script.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bubbly-bg@1.0.0/dist/bubbly-bg.min.js"></script>
+  <script>
+    bubbly({
+      colorStart: "#050517",
+      colorStop: "#181b2c",
+      bubbleFunc: () =>
+        `hsla(${210 + Math.random() * 30}, 100%, ${60 + Math.random() * 10}%, .25)`,
+      bubbles: 30, // more bubbles for a denser look
+      blur: 10,
+      compose: "source-over",
+      angle: 0,
+      minRadius: 0.5, // smaller minimum radius
+      maxRadius: 1,   // smaller maximum radius
+      velocityFunc: () => 1.5 + Math.random() * 2 // much faster bubbles
+    });
+  </script> -->
+<!-- ...existing code... -->
+  <script>
+    // Electric Storm Animated Background
+    const container = document.querySelector('.animated-bg-geometric');
+    container.innerHTML = ''; // Clear previous shapes
+
+    function randomColor() {
+      // Electric blue/purple palette
+      const hues = [200, 220, 260, 280];
+      return `hsla(${hues[Math.floor(Math.random()*hues.length)]}, 100%, 60%, 0.7)`;
+    }
+
+    function createBolt(x, y, strength = 1) {
+      const bolt = document.createElement('div');
+      const length = 120 + Math.random() * 80 * strength;
+      const angle = Math.random() * 360;
+      bolt.style.position = 'absolute';
+      bolt.style.left = `${x - length/2}px`;
+      bolt.style.top = `${y - 2}px`;
+      bolt.style.width = `${length}px`;
+      bolt.style.height = '4px';
+      bolt.style.background = `linear-gradient(90deg, transparent, ${randomColor()}, transparent)`;
+      bolt.style.opacity = 0.8;
+      bolt.style.transform = `rotate(${angle}deg)`;
+      bolt.style.filter = 'blur(1.5px) drop-shadow(0 0 8px #fff)';
+      bolt.style.pointerEvents = 'none';
+      bolt.style.transition = 'opacity 0.5s linear';
+      container.appendChild(bolt);
+      setTimeout(() => { bolt.style.opacity = 0; }, 80 + Math.random()*120);
+      setTimeout(() => { bolt.remove(); }, 600);
+    }
+
+    // Adaptive performance: reduce animation if FPS drops
+    let boltsPerSecond = 18;
+    let lastTime = performance.now();
+    let frames = 0;
+    let lowPerf = false;
+
+    function animateBolts() {
+      if (!lowPerf) {
+        for (let i = 0; i < 2; i++) {
+          const x = Math.random() * window.innerWidth;
+          const y = Math.random() * window.innerHeight;
+          createBolt(x, y, 1);
+        }
+      }
+      requestAnimationFrame(animateBolts);
+      frames++;
+      const now = performance.now();
+      if (now - lastTime > 1000) {
+        if (frames < 30) lowPerf = true;
+        else lowPerf = false;
+        frames = 0;
+        lastTime = now;
+      }
+    }
+    animateBolts();
+
+    // Interactivity: burst effect on click/tap
+    function burst(x, y, strength = 1.2, radius = 200) {
+      for (let i = 0; i < 12 * strength; i++) {
+        const angle = (Math.PI * 2 * i) / (12 * strength);
+        const bx = x + Math.cos(angle) * (Math.random() * radius * 0.7);
+        const by = y + Math.sin(angle) * (Math.random() * radius * 0.7);
+        createBolt(bx, by, strength);
+      }
+    }
+    container.addEventListener('pointerdown', e => {
+      burst(e.clientX, e.clientY, 1.2, 200);
+    });
+
+    // Style for bolts
+    const style = document.createElement('style');
+    style.textContent = `
+      .animated-bg-geometric { background: #181b2c; opacity: 0.7; z-index: -1; pointer-events: auto; }
+      .animated-bg-geometric div { will-change: opacity, transform; }
+    `;
+    document.head.appendChild(style);
+  </script>
 
   <!--
     - ionicon linkasdasdasd
