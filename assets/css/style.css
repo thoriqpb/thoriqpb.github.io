@@ -1899,3 +1899,31 @@ textarea.form-input::-webkit-resizer { display: none; }
   margin-bottom: 0.5em;
   padding-left: 0;           /* No extra indent on li */
 }
+
+/* Geometric shapes animated background */
+.animated-bg-geometric {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.6;
+  background: #181b2c;
+  overflow: hidden;
+}
+.animated-bg-geometric span {
+  position: absolute;
+  display: block;
+  border-radius: 10%;
+  opacity: 0.7;
+  animation: geometric-move 20s linear infinite;
+}
+@keyframes geometric-move {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-1000px) rotate(360deg) scale(0.5);
+    opacity: 0;
+  }
+}
