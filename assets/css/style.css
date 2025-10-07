@@ -732,7 +732,7 @@ main {
   display: flex;
   justify-content: start; /* Center items horizontally */
   align-items: center;     /* Center items vertically */
-  gap: 15px;
+  gap: 30px;
   margin: 0 -15px;
   padding: 25px;
   padding-bottom: 25px;
