@@ -855,7 +855,34 @@
             </li> -->
 
             <li class="project-item active" data-filter-item data-category="projects">
-              <a href="https://github.com/thoriqpb/Self-Driving-Car-with-Pixy2" target="_blank">
+              <a href="#"
+                onclick="openModal(event, this)"
+                data-title="Line Follower Robot with Pixy2 Cam"
+                data-image="./assets/images/pixyLineDetection.gif"
+                data-description="A self-driving car using an ESP32 microcontroller, a Pixy2 camera for line tracking, and a PID controller for steering and motor control."
+                data-details="
+                  <h4>Project Overview</h4>
+                  <p style='text-align: justify;'>
+                    This project presents a <strong>line-follower robot</strong> powered by an <strong>ESP32 microcontroller</strong>, equipped with a <strong>Pixy2 camera</strong> for vision-based line detection and an <strong>OLED display</strong> for real-time interface feedback. 
+                    The system includes an interactive, <strong>button-based menu</strong> that allows on-device configuration of <strong>PID parameters</strong> and <strong>servo control</strong> for precise and adaptive navigation.
+                  </p>
+
+                  <p style='text-align: justify;'>
+                    The menu interface is operated using <strong>four physical buttons</strong> that enable users to adjust <strong>proportional (P)</strong>, <strong>integral (I)</strong>, and <strong>derivative (D)</strong> constants directly on the device, 
+                    eliminating the need for external programming. This design enhances tuning efficiency during testing and improves control performance in dynamic environments.
+                  </p>
+
+                  <p style='text-align: justify;'>
+                    Through the integration of <strong>embedded control</strong>, <strong>computer vision</strong>, and <strong>user interface design</strong>, this prototype demonstrates how <strong>low-cost hardware</strong> can achieve 
+                    semi-autonomous navigation and adaptive steering behavior.
+                  </p>
+
+                  <p style='margin-top: 1rem; text-align: justify;'>
+                    <a href='https://github.com/thoriqpb/Self-Driving-Car-with-Pixy2' target='_blank' style='color:#5bc0de; text-decoration:underline;'>
+                      View on GitHub
+                    </a>
+                  </p>
+                ">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
@@ -868,24 +895,82 @@
                 </p>
               </a>
             </li>
+
             
             <li class="project-item active" data-filter-item data-category="projects">
-              <a href="https://github.com/thoriqpb/Line-Mesh-Project" target="_blank">
+              <a href="#"
+                onclick="openModal(event, this)"
+                data-title="Line Maze Robot"
+                data-image="./assets/images/demoLineMaze.gif"
+                data-description="An intelligent line-following robot designed to find the fastest route in a black-and-white maze using custom PCBs and pathfinding algorithms."
+                data-details="
+                  <h4>Project Overview</h4>
+                  <p style='text-align: justify;'>
+                    The <strong>Line Maze Robot</strong> is an intelligent <strong>line-following robot</strong> designed to navigate and determine the <strong>fastest path</strong> through a <strong>black-and-white arena</strong>. 
+                    Built using <strong>three custom PCBs</strong>, this robot combines <strong>sensor systems</strong>, <strong>motor control</strong>, and an <strong>interactive user interface</strong> for efficient autonomous movement and real-time decision-making.
+                  </p>
+
+                  <h4>🚀 Project Goal</h4>
+                  <p style='text-align: justify;'>
+                    The main goal of this project is to enable the robot to:
+                  </p>
+                  <ul style='text-align: justify; padding-left: 1.2rem;'>
+                    <li><strong>Detect intersections and paths</strong> on a black-and-white grid using a sensor array.</li>
+                    <li><strong>Record and analyze paths</strong> through internal logic and memory mapping.</li>
+                    <li><strong>Determine and follow the fastest route</strong> to complete the arena efficiently.</li>
+                  </ul>
+
+                  <p style='text-align: justify;'>
+                    This project showcases the integration of <strong>real-time path analysis</strong> and <strong>hardware-level optimization</strong>, providing a compact yet powerful demonstration of autonomous maze-solving behavior.
+                  </p>
+
+                  <p style='margin-top: 1rem; text-align: justify;'>
+                    <a href='https://github.com/thoriqpb/Line-Mesh-Project' target='_blank' style='color:#5bc0de; text-decoration:underline;'>
+                      View on GitHub
+                    </a>
+                  </p>
+                ">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
-                  <img src="./assets/images/line_mesh_robot.jpeg" alt="Line Mesh Robot with custom PCBs" loading="lazy">
+                  <img src="./assets/images/line_mesh_robot.jpeg" alt="Line Maze Robot with Custom PCBs" loading="lazy">
                 </figure>
-                <h3 class="project-title">Designed and Developed Line Mesh Robot</h3>
+                <h3 class="project-title">Line Maze Robot</h3>
                 <p class="project-category">
-                  Developed a line-following robot equipped with 3 custom PCBs featuring sensor arrays, motor drivers, and an interactive OLED interface. Implemented pathfinding algorithms to detect and map the fastest route through a black-and-white grid arena, enhancing autonomous navigation and decision-making.
+                  Intelligent line-following robot built with custom PCBs and pathfinding algorithms for optimal maze-solving performance.
                 </p>
               </a>
             </li>
 
             <li class="project-item active" data-filter-item data-category="projects">
-              <a href="https://github.com/thoriqpb/Heart-Failure-Prediction" target="_blank">
+              <a href="#"
+                onclick="openModal(event, this)"
+                data-title="Heart Failure Survival Prediction using Machine Learning"
+                data-image="./assets/images/demo.gif"
+                data-description="A comparative study of Decision Tree, Random Forest, and Neural Network models for predicting heart failure survival outcomes."
+                data-details="
+                  <h4>Project Overview</h4>
+                  <p style='text-align: justify;'>
+                    This project presents a <strong>comparative analysis</strong> of three <strong>machine learning models</strong>—Decision Tree, Random Forest, and Neural Network—for predicting <strong>patient survival outcomes</strong> in cases of <strong>heart failure</strong>. 
+                    The study was inspired by the <strong>global burden of heart disease</strong> and the need for <strong>accurate, accessible, and data-efficient</strong> clinical prediction tools.
+                  </p>
+
+                  <p style='text-align: justify;'>
+                    By leveraging only <strong>four routinely collected clinical features</strong>, this research highlights how predictive models can remain effective even in <strong>data-limited medical settings</strong>. 
+                    Each model was trained and evaluated using <strong>accuracy</strong>, <strong>precision</strong>, and <strong>AUC metrics</strong> to ensure reliable performance and interpretability.
+                  </p>
+
+                  <p style='text-align: justify;'>
+                    The results show that the <strong>neural network</strong> achieved the best balance between sensitivity and specificity, demonstrating the potential of <strong>deep learning</strong> in enhancing <strong>early diagnosis</strong> and <strong>clinical decision support</strong>. 
+                    This approach provides a promising foundation for implementing <strong>AI-assisted healthcare</strong> systems in real-world environments.
+                  </p>
+
+                  <p style='margin-top: 1rem; text-align: justify;'>
+                    For full documentation and code, visit 
+                    <a href='https://github.com/thoriqpb/Heart-Failure-Prediction' target='_blank' style='color:#5bc0de; text-decoration:underline;'>GitHub Repository</a>.
+                  </p>
+                ">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
@@ -894,14 +979,38 @@
                 </figure>
                 <h3 class="project-title">Heart Failure Survival Prediction using Machine Learning</h3>
                 <p class="project-category">
-                  Developed a neural network to predict heart failure using clinical data. Trained and evaluated the model with accuracy and AUC metrics for early diagnosis support.
+                  Comparative analysis of Decision Tree, Random Forest, and Neural Network models for predicting heart failure survival outcomes.
                 </p>
               </a>
             </li>
 
-            
             <li class="project-item active" data-filter-item data-category="projects">
-              <a href="https://github.com/thoriqpb/Fuzzy-Logic-Distance-Controlled-Robot" target="_blank">
+              <a href="#"
+                onclick="openModal(event, this)"
+                data-title="Fuzzy Logic Distance-Controlled Robot"
+                data-image="./assets/images/fuzzy.jpeg"
+                data-description="A mini car project that uses fuzzy logic to maintain a stable distance from obstacles using an ultrasonic sensor and Sugeno inference."
+                data-details="
+                  <h4>Project Overview</h4>
+                  <p style='text-align: justify;'>
+                    This project demonstrates a <strong>mini autonomous car</strong> designed to maintain a constant <strong>15 cm distance</strong> from obstacles using <strong>fuzzy logic control</strong>. 
+                    It employs an <strong>HC-SR04 ultrasonic sensor</strong> to continuously measure distance and adjust motor speed accordingly.
+                  </p>
+
+                  <p style='text-align: justify;'>
+                    The <strong>Sugeno inference method</strong> was implemented to process sensor input data and determine motor responses in real time. 
+                    This approach enables the robot to respond smoothly to dynamic environmental changes without abrupt movements or collisions.
+                  </p>
+
+                  <p style='text-align: justify;'>
+                    Through careful tuning of membership functions and rule bases, the system achieved <strong>stable and precise control</strong> at short distances, demonstrating the practical application of fuzzy systems in <strong>non-linear control problems</strong>.
+                  </p>
+
+                  <p style='margin-top: 1rem; text-align: justify;'>
+                    View the full source code and implementation details on 
+                    <a href='https://github.com/thoriqpb/Fuzzy-Logic-Distance-Controlled-Robot' target='_blank' style='color:#5bc0de; text-decoration:underline;'>GitHub Repository</a>.
+                  </p>
+                ">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
@@ -910,13 +1019,41 @@
                 </figure>
                 <h3 class="project-title">Fuzzy Logic Distance-Controlled Robot</h3>
                 <p class="project-category">
-                  Developed a mini car project that uses fuzzy logic with Sugeno inference to maintain a stable 15 cm distance from obstacles, utilizing the HC-SR04 ultrasonic sensor.
+                  Mini car using fuzzy logic and Sugeno inference to maintain a stable 15 cm distance from obstacles via HC-SR04 ultrasonic sensor.
                 </p>
               </a>
             </li>
 
+
             <li class="project-item active" data-filter-item data-category="projects">
-              <a href="https://github.com/thoriqpb/Principal-Component-Analysis/"  target="_blank">
+              <a href="#"
+                onclick="openModal(event, this)"
+                data-title="PCA on Drug Induced Autoimmunity Prediction"
+                data-image="./assets/images/pca_visualization.png"
+                data-description="Implementation of Principal Component Analysis (PCA) for dimensionality reduction on the Drug Induced Autoimmunity Prediction dataset, followed by Logistic Regression training."
+                data-details="
+                  <h4>Project Overview</h4>
+                  <p style='text-align: justify;'>
+                    This project focuses on implementing a <strong>dimensionality reduction algorithm</strong>—<strong>Principal Component Analysis (PCA)</strong>—to simplify complex data and improve the efficiency of model training. 
+                    The dataset used is the <strong>Drug Induced Autoimmunity Prediction</strong> dataset, which can be accessed from the 
+                    <a href='https://archive.ics.uci.edu/dataset/1104/drug_induced_autoimmunity_prediction' target='_blank' style='color:#5bc0de; text-decoration:underline;'>UCI Machine Learning Repository</a>.
+                  </p>
+
+                  <p style='text-align: justify;'>
+                    PCA was applied to extract the most significant components from high-dimensional data, thereby <strong>reducing redundancy</strong> and <strong>simplifying feature space</strong> while preserving essential variance. 
+                    This step helps in improving model interpretability and computational performance.
+                  </p>
+
+                  <p style='text-align: justify;'>
+                    After dimensionality reduction, a <strong>Logistic Regression model</strong> was trained on the transformed dataset to predict autoimmunity outcomes. 
+                    The resulting model achieved an accuracy of <strong>71.875%</strong>, highlighting the effectiveness of PCA in enhancing training efficiency without substantial loss of information.
+                  </p>
+
+                  <p style='margin-top: 1rem; text-align: justify;'>
+                    The source code and full implementation details are available on 
+                    <a href='https://github.com/thoriqpb/Principal-Component-Analysis/' target='_blank' style='color:#5bc0de; text-decoration:underline;'>GitHub Repository</a>.
+                  </p>
+                ">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
@@ -925,13 +1062,37 @@
                 </figure>
                 <h3 class="project-title">PCA on Drug Induced Autoimmunity Prediction</h3>
                 <p class="project-category">
-                  Applied Principal Component Analysis (PCA) to reduce dimensionality on a drug-induced autoimmunity dataset from the UCI repository. Trained a Logistic Regression model on the reduced dataset, achieving 71.875% accuracy.
+                  Applied Principal Component Analysis (PCA) for dimensionality reduction on a UCI dataset and trained a Logistic Regression model with 71.875% accuracy.
                 </p>
               </a>
             </li>
 
             <li class="project-item active" data-filter-item data-category="activities">
-              <a href="#">
+              <a href="#"
+                onclick="openModal(event, this)"
+                data-title="Led and Coordinated Student Research & Development"
+                data-image="./assets/images/tracer.jpg"
+                data-description="Leadership and coordination of student research and innovation at TRIK Research and Development Center (TRACER)."
+                data-details="
+                  <h4>Activity Overview</h4>
+                  <p style='text-align: justify;'>
+                    As the coordinator at the <strong>TRIK Research and Development Center (TRACER)</strong>, I was responsible for <strong>leading and organizing multidisciplinary research projects</strong> involving students from various engineering and vocational backgrounds. 
+                    This role emphasized collaboration, mentorship, and innovation-driven learning.
+                  </p>
+
+                  <p style='text-align: justify;'>
+                    My work included <strong>overseeing prototype development</strong>, managing research documentation, and ensuring effective communication among team members. 
+                    Through these activities, the center successfully fostered a culture of <strong>applied research</strong> and <strong>technological creativity</strong> among students.
+                  </p>
+
+                  <p style='text-align: justify;'>
+                    The projects conducted under TRACER ranged from embedded systems and automation to sustainable technology development, contributing to both <strong>academic growth</strong> and <strong>community impact</strong>.
+                  </p>
+
+                  <p style='margin-top: 1rem; text-align: justify;'>
+                    Learn more about TRIK R&D activities through institutional highlights and student showcases.
+                  </p>
+                ">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
@@ -940,13 +1101,37 @@
                 </figure>
                 <h3 class="project-title">Led and Coordinated Student Research & Development</h3>
                 <p class="project-category">
-                  Led and coordinated research and innovation initiatives at the TRIK Research and Development Center (TRACER), fostering collaboration and advancing student-driven projects.
+                  Leadership at TRIK R&D Center (TRACER), coordinating multidisciplinary student innovation and applied research projects.
                 </p>
               </a>
             </li>
 
+
             <li class="project-item active" data-filter-item data-category="projects">
-              <a href="https://github.com/thoriqpb/Leaf-Meter" target="_blank">
+              <a href="#"
+                onclick="openModal(event, this)"
+                data-title="Developing Leaf Meter Based on Computer Vision"
+                data-image="./assets/images/03.jpg"
+                data-description="Collaborative project developing a device for measuring leaf dimensions using computer vision technology."
+                data-details="
+                  <h4>Project Overview</h4>
+                  <p style='text-align: justify;'>
+                    The <strong>Leaf Meter</strong> project focused on designing and developing a system to measure leaf dimensions using <strong>computer vision</strong>. The device enables automated measurement and data collection, providing a practical tool for <strong>agricultural research and environmental monitoring</strong>.
+                  </p>
+
+                  <p style='text-align: justify;'>
+                    The project was a collaboration among students from the <strong>Department of Electrical Engineering</strong> and <strong>Informatics</strong>. The system utilized <strong>image processing algorithms</strong> for contour detection, calibration, and dimension estimation, integrated with a microcontroller-based processing unit.
+                  </p>
+
+                  <p style='text-align: justify;'>
+                    Through this project, the team learned to apply <strong>OpenCV libraries</strong> for image analysis, optimize real-time processing, and integrate <strong>hardware-software communication</strong> effectively.
+                  </p>
+
+                  <p style='margin-top: 1rem; text-align: justify;'>
+                    Explore the full project documentation and source code on 
+                    <a href='https://github.com/thoriqpb/Leaf-Meter' target='_blank' style='color:#5bc0de; text-decoration:underline;'>GitHub</a>.
+                  </p>
+                ">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
@@ -959,9 +1144,34 @@
                 </p>
               </a>
             </li>
-            
+
+
             <li class="project-item active" data-filter-item data-category="activities">
-              <a href="#">
+              <a href="#"
+                onclick="openModal(event, this)"
+                data-title="Pionir Permadani 2024"
+                data-image="./assets/images/01.jpg"
+                data-description="Selected as a band performer at the 2024 Pionir Permadani event, showcasing creativity and collaboration."
+                data-details="
+                  <h4>Event Overview</h4>
+                  <p style='text-align: justify;'>
+                    Participated as a <strong>band performer</strong> in the <strong>Pionir Permadani 2024</strong> event, representing the university in a large-scale performance that emphasized <strong>creativity</strong>, <strong>teamwork</strong>, and <strong>musical collaboration</strong>.
+                  </p>
+
+                  <p style='text-align: justify;'>
+                    The performance featured a blend of original compositions and popular arrangements, engaging an audience of over <strong>300 participants</strong>. 
+                    The team worked closely across technical, artistic, and stage management divisions to deliver a seamless live show.
+                  </p>
+
+                  <p style='text-align: justify;'>
+                    This experience strengthened both <strong>leadership</strong> and <strong>coordination skills</strong>, highlighting the importance of preparation, adaptability, and unity in high-energy creative environments.
+                  </p>
+
+                  <p style='margin-top: 1rem; text-align: justify;'>
+                    View highlights and media coverage on 
+                    <a href='https://www.instagram.com/p/C-FySq0yCBH/?img_index=5' target='_blank' style='color:#5bc0de; text-decoration:underline;'>Instagram</a>.
+                  </p>
+                ">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
@@ -976,7 +1186,20 @@
             </li>
 
             <li class="project-item active" data-filter-item data-category="activities">
-              <a href="#">
+              <a href="#"
+                onclick="openModal(event, this)"
+                data-title="TRIK Study Club"
+                data-image="./assets/images/02.jpg"
+                data-description="Organized and facilitated collaborative study sessions for peers and junior students."
+                data-details="
+                  <h4>Activity Overview</h4>
+                  <p style='text-align: justify;'>
+                    The <strong>TRIK Study Club</strong> was an academic support initiative designed to assist students in preparing for <strong>midterm and final exams</strong>. I organized and facilitated <strong>group study sessions</strong> that emphasized peer-to-peer learning, collaborative problem solving, and conceptual understanding of core electrical and informatics topics.
+                  </p>
+                  <p style='text-align: justify;'>
+                    This activity helped strengthen communication, mentorship, and leadership skills while fostering a supportive and academically driven community within the TRIK Research and Development environment.
+                  </p>
+                ">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
@@ -990,12 +1213,25 @@
               </a>
             </li>
 
-
-
-            
-
             <li class="project-item active" data-filter-item data-category="projects">
-              <a href="https://github.com/thoriqpb/3-Omni-Wheeled-Base" target="_blank">
+              <a href="#"
+                onclick="openModal(event, this)"
+                data-title="3 Omni-Wheeled Robot with PS4 Controller"
+                data-image="./assets/images/omni_robot.jpg"
+                data-description="Designed a Bluetooth-controlled omni-wheel robot using ESP32 and inverse kinematics."
+                data-details="
+                  <h4>Project Overview</h4>
+                  <p style='text-align: justify;'>
+                    The <strong>3 Omni-Wheeled Robot</strong> project involved building a compact, mobile platform capable of moving in any direction using <strong>three omni-directional wheels</strong>. The system was powered by an <strong>ESP32 microcontroller</strong> and <strong>IBT2 motor drivers</strong>, with motion control implemented through a <strong>PS4 Bluetooth controller</strong>.
+                  </p>
+                  <p style='text-align: justify;'>
+                    The robot’s movement was based on <strong>inverse kinematics equations</strong>, ensuring precise and smooth <strong>vector-based motion</strong> across multiple axes, even without encoders. This project served as a foundation for research in mobile robotics and control systems.
+                  </p>
+                  <p style='margin-top: 1rem; text-align: justify;'>
+                    Explore the full source code and documentation on 
+                    <a href='https://github.com/thoriqpb/3-Omni-Wheeled-Base' target='_blank' style='color:#5bc0de; text-decoration:underline;'>GitHub</a>.
+                  </p>
+                ">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
@@ -1011,7 +1247,20 @@
 
 
             <li class="project-item active" data-filter-item data-category="projects">
-              <a href="#">
+              <a href="#"
+                onclick="openModal(event, this)"
+                data-title="Real-Time Wounds’ Dimension Estimation"
+                data-image="./assets/images/04.jpg"
+                data-description="Developing a real-time wound dimension estimation tool using YOLOv8 and regression methods."
+                data-details="
+                  <h4>Project Overview</h4>
+                  <p style='text-align: justify;'>
+                    The <strong>Real-Time Wounds’ Dimension Estimation</strong> project is a <strong>faculty-led research initiative</strong> focused on medical image analysis. The system employs <strong>YOLOv8 object detection</strong> to identify wound regions and utilizes <strong>piecewise linear regression</strong> to accurately estimate their physical dimensions in real time.
+                  </p>
+                  <p style='text-align: justify;'>
+                    This research aims to support healthcare practitioners in <strong>automating wound measurement</strong>, improving assessment accuracy, and reducing manual workload in clinical settings.
+                  </p>
+                ">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
@@ -1026,7 +1275,24 @@
             </li>
 
             <li class="project-item active" data-filter-item data-category="projects">
-              <a href="https://github.com/thoriqpb/Tic-Tac-Toe" target="_blank">
+              <a href="#"
+                onclick="openModal(event, this)"
+                data-title="Developing Tic Tac Toe Game using C++"
+                data-image="./assets/images/tictactoe.png"
+                data-description="A simple Tic Tac Toe game developed collaboratively using C++."
+                data-details="
+                  <h4>Project Overview</h4>
+                  <p style='text-align: justify;'>
+                    The <strong>Tic Tac Toe Game</strong> was a collaborative programming project developed during the <strong>first year of study</strong> using <strong>C++</strong>. It served as a foundational exercise in <strong>logical thinking</strong>, <strong>problem-solving</strong>, and <strong>team collaboration</strong>.
+                  </p>
+                  <p style='text-align: justify;'>
+                    The game features basic input handling, turn-based gameplay, and win-condition checking — demonstrating a solid understanding of <strong>control structures</strong> and <strong>modular programming</strong>.
+                  </p>
+                  <p style='margin-top: 1rem; text-align: justify;'>
+                    Explore the source code on 
+                    <a href='https://github.com/thoriqpb/Tic-Tac-Toe' target='_blank' style='color:#5bc0de; text-decoration:underline;'>GitHub</a>.
+                  </p>
+                ">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
@@ -1490,6 +1756,45 @@
       spacing: 15.00
     })
   </script>
+
+  <!-- Shared Modal -->
+  <div id="customModal" class="custom-modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <img id="modalImage" class="modal-img" alt="">
+      <p id="modalDescription"></p>
+      <div id="modalDetails" class="modal-details"></div>
+    </div>
+  </div>
+
+  <script>
+  function openModal(event, element) {
+    event.preventDefault();
+
+    const title = element.getAttribute('data-title');
+    const image = element.getAttribute('data-image');
+    const description = element.getAttribute('data-description');
+    const details = element.getAttribute('data-details');
+
+    document.getElementById('modalTitle').textContent = title;
+    document.getElementById('modalImage').src = image;
+    document.getElementById('modalImage').alt = title;
+    document.getElementById('modalDescription').textContent = description;
+
+    // ✅ Allow HTML inside the details section
+    document.getElementById('modalDetails').innerHTML = details;
+
+    document.getElementById('customModal').classList.add('active');
+  }
+
+  function closeModal() {
+    document.getElementById('customModal').classList.remove('active');
+  }
+  </script>
+
+
+
 </body>
 
 </html>
