@@ -730,8 +730,8 @@ main {
 
 .clients-list {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: start; /* Center items horizontally */
+  align-items: center;     /* Center items vertically */
   gap: 15px;
   margin: 0 -15px;
   padding: 25px;
@@ -745,7 +745,7 @@ main {
 
 .clients-item {
   min-width: 50%;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
 }
 
 /* Make client logos 1:1 aspect ratio and max 200px */
