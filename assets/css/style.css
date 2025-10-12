@@ -41,7 +41,7 @@
   --bg-gradient-yellow-2: linear-gradient(
     135deg, 
     hsla(210, 100%, 60%, 0.251) 0%, 
-    hsla(210, 100%, 60%, 0) 59.86%
+    hsla(210, 100%, 60%, 0) 59.86%  
   ), hsl(220, 20%, 10%);
   --border-gradient-onyx: linear-gradient(
     to bottom right, 
@@ -1971,3 +1971,159 @@ textarea.form-input::-webkit-resizer { display: none; }
   margin-top: -10px; /* move upward slightly */
   margin-bottom: 0.75rem; /* space below the title */
 }
+
+.timeline-images {
+  display: flex;           /* Arrange images horizontally */
+  gap: 10px;               /* Space between images */
+  margin-top: 10px;        /* Space above the gallery */
+  flex-wrap: wrap;          /* Optional: wrap to next line if too many */
+}
+
+.timeline-images img {
+  width: 128px;             /* Thumbnail size */
+  height: 72px;            /* Keep square if needed */
+  object-fit: cover;       /* Crop/fit image nicely */
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.2s;
+}
+
+.timeline-images img:hover {
+  transform: scale(1.1);
+}
+
+/* === Resume Popup Modal === */
+.resume-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+}
+
+.resume-modal.active {
+  display: flex;
+  animation: fadeIn 0.25s ease-in-out;
+}
+
+/* Frame / content */
+.resume-modal-content {
+  background: var(--eerie-black, #1a1a1a);
+  color: var(--white, #fff);
+  border-radius: 14px;
+  max-width: 900px;
+  width: 90%;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header */
+.resume-modal-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.resume-modal-title {
+  font-weight: var(--fw-600);
+  font-size: var(--fs-2);
+  color: var(--white, #fff);
+  text-align: left;
+}
+
+.resume-close-btn {
+  font-size: 28px;
+  cursor: pointer;
+  color: var(--white, #fff);
+  transition: 0.2s;
+}
+
+.resume-close-btn:hover {
+  color: #ff5555;
+}
+
+/* Image */
+.resume-modal-img {
+  max-width: 100%;
+  max-height: 500px;
+  border-radius: 10px;
+  object-fit: contain;
+  margin: 0.5rem 0;
+}
+
+/* Caption */
+.resume-modal-caption {
+  font-size: var(--fs-4);
+  color: #ddd;
+  text-align: center;
+  margin-top: 0.5rem;
+  padding: 0 0.5rem;
+}
+
+/* Navigation buttons */
+.resume-prev-btn,
+.resume-next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(30, 30, 30, 0.8);
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.resume-prev-btn:hover,
+.resume-next-btn:hover {
+  background: rgba(50, 50, 50, 0.9);
+}
+
+.resume-prev-btn { left: 10px; }
+.resume-next-btn { right: 10px; }
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .resume-modal-content {
+    max-width: 95%;
+    padding: 1rem;
+  }
+
+  .resume-modal-img {
+    max-height: 350px;
+  }
+
+  .resume-modal-title {
+    font-size: var(--fs-3);
+  }
+
+  .resume-prev-btn,
+  .resume-next-btn {
+    padding: 6px 10px;
+    font-size: var(--fs-5);
+  }
+}
+
+@media (max-width: 480px) {
+  .resume-modal-img {
+    max-height: 280px;
+  }
+
+  .resume-modal-caption {
+    font-size: var(--fs-6);
+  }
+}
+
