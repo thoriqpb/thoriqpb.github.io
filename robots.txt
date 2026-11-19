@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://thoriqpb.is-a.dev/sitemap.xml
