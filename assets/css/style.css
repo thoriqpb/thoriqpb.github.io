@@ -722,47 +722,62 @@ main {
 }
 
 
-/**
- * #clients 
- */
+/*-----------------------------------*\
+  #CLIENTS
+\*-----------------------------------*/
 
 .clients { margin-bottom: 15px; }
 
 .clients-list {
   display: flex;
-  justify-content: start; /* Center items horizontally */
-  align-items: center;     /* Center items vertically */
-  gap: 30px;
-  margin: 0 -15px;
-  padding: 25px;
-  padding-bottom: 25px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  overscroll-behavior-inline: contain;
-  scroll-snap-type: inline mandatory;
-  scroll-padding-inline: 25px;
+  flex-wrap: wrap; /* Allows logos to wrap nicely if screen is too small */
+  justify-content: center;
+  align-items: center;
+  gap: 30px; /* Clean, even gap */
+  padding: 20px 0;
+  margin: 0;
+  overflow: hidden; /* Hides the unwanted scrollbar on desktop */
 }
 
 .clients-item {
-  min-width: 50%;
-  scroll-snap-align: center;
+  flex: 0 0 auto;
+  /* Resets any old min-width rules */
+  min-width: unset !important; 
+  width: auto;
 }
 
-/* Make client logos 1:1 aspect ratio and max 200px */
 .clients-item img {
-  width: 200px;
-  height: 200px;
+  height: 90px; /* Bigger logos */
+  width: auto;
+  max-width: 150px;
   object-fit: contain;
-  aspect-ratio: 1 / 1;
   filter: grayscale(1);
   transition: var(--transition-1);
 }
 
-.clients-item img:hover { filter: grayscale(0); }
+.clients-item img:hover { 
+  filter: grayscale(0); 
+  transform: scale(1.05);
+}
 
-
-
-
+/* Mobile specific: turn it back into a swipeable row */
+@media (max-width: 768px) {
+  .clients-list {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 15px;
+    gap: 20px;
+  }
+  
+  .clients-item {
+    flex-shrink: 0;
+  }
+  
+  .clients-item img {
+    height: 70px;
+  }
+}
 
 /*-----------------------------------*\
   #RESUME
@@ -832,6 +847,7 @@ main {
   font-weight: var(--fw-300);
   line-height: 1.6;
 }
+
 
 
 /**
@@ -1243,7 +1259,7 @@ textarea.form-input::-webkit-resizer { display: none; }
    * client
    */
 
-  .clients-item { min-width: calc(33.33% - 10px); }
+  /* .clients-item { min-width: calc(33.33% - 10px); } */
 
 
 
@@ -1484,7 +1500,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     scroll-padding-inline: 45px;
   }
 
-  .clients-item { min-width: calc(33.33% - 35px); }
+  /* .clients-item { min-width: calc(33.33% - 35px); } */
 
 
 
@@ -1740,7 +1756,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   /* clients */
 
-  .clients-item { min-width: calc(25% - 38px); }
+  /* .clients-item { min-width: calc(25% - 38px); } */
 
 
 
