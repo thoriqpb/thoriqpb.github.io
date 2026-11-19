@@ -751,12 +751,12 @@ main {
   width: auto;
   max-width: 150px;
   object-fit: contain;
-  filter: grayscale(1);
+  /* filter: grayscale(1); */
   transition: var(--transition-1);
 }
 
 .clients-item img:hover { 
-  filter: grayscale(0); 
+  /* filter: grayscale(0);  */
   transform: scale(1.05);
 }
 
