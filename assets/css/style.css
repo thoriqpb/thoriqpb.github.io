@@ -726,38 +726,64 @@ main {
   #CLIENTS
 \*-----------------------------------*/
 
-.clients { margin-bottom: 15px; }
+.clients { 
+  position: relative;
+  margin-bottom: 35px; 
+  /* Matches the exact background style of your service cards */
+  background: var(--border-gradient-onyx);
+  border-radius: 14px;
+  padding: 25px 20px; /* Slightly more padding */
+  box-shadow: var(--shadow-2);
+  z-index: 1;
+}
+
+/* The inner dark background that makes the border pop */
+.clients::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-gradient-jet);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.clients-title {
+  margin-bottom: 25px;
+  margin-left: 5px;
+}
 
 .clients-list {
   display: flex;
-  flex-wrap: wrap; /* Allows logos to wrap nicely if screen is too small */
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 30px; /* Clean, even gap */
-  padding: 20px 0;
+  gap: 30px;
+  padding: 10px 0;
   margin: 0;
-  overflow: hidden; /* Hides the unwanted scrollbar on desktop */
+  overflow: hidden;
 }
 
 .clients-item {
   flex: 0 0 auto;
-  /* Resets any old min-width rules */
   min-width: unset !important; 
   width: auto;
 }
 
 .clients-item img {
-  height: 90px; /* Bigger logos */
+  height: 90px;
   width: auto;
   max-width: 150px;
   object-fit: contain;
-  /* filter: grayscale(1); */
   transition: var(--transition-1);
+  
+  /* Adds a very subtle white glow so dark logos (like Miconos) don't disappear */
+  filter: drop-shadow(0px 0px 3px rgba(255, 255, 255, 0.15)); 
 }
 
 .clients-item img:hover { 
-  /* filter: grayscale(0);  */
   transform: scale(1.05);
+  /* Make the glow slightly brighter on hover */
+  filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.3)); 
 }
 
 /* Mobile specific: turn it back into a swipeable row */
@@ -766,7 +792,7 @@ main {
     flex-wrap: nowrap;
     justify-content: flex-start;
     overflow-x: auto;
-    padding: 15px;
+    padding: 15px 5px;
     gap: 20px;
   }
   
@@ -2143,3 +2169,185 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 }
 
+/*-----------------------------------*\
+  #TECHNICAL SKILLS GRID
+\*-----------------------------------*/
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.skill-card {
+  background: var(--bg-gradient-jet);
+  border: 1px solid var(--jet);
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: var(--shadow-1);
+}
+
+.skill-card .h4 {
+  margin-bottom: 15px;
+  color: var(--orange-yellow-crayola);
+  font-size: var(--fs-5);
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tags li {
+  background: var(--onyx);
+  color: var(--light-gray);
+  font-size: var(--fs-7);
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--jet);
+  transition: var(--transition-1);
+}
+
+/* Optional: Subtle hover effect on the tags */
+.skill-tags li:hover {
+  border-color: var(--orange-yellow-crayola);
+  color: var(--white-2);
+}
+
+/* Make it a 2-column grid on tablets */
+@media (min-width: 580px) {
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Make it a 3-column grid on desktop for a beautiful layout */
+@media (min-width: 1024px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/*-----------------------------------*\
+  #ALWAYS OPEN SIDEBAR OVERRIDE
+\*-----------------------------------*/
+
+/* Force the sidebar to always be fully expanded */
+.sidebar {
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+/* Ensure the contact info is always visible */
+.sidebar-info_more {
+  opacity: 1 !important;
+  visibility: visible !important;
+  margin-top: 20px;
+}
+
+/* Center the profile info for a modern profile card look */
+.sidebar-info {
+  flex-direction: column;
+  text-align: center;
+  gap: 15px;
+}
+
+.avatar-box img {
+  width: 120px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-2);
+}
+
+.info-content .title {
+  margin: 0 auto; /* Centers the title tag */
+}
+
+/* Make the contact boxes look like clickable cards */
+.contacts-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.contact-item {
+  background: var(--bg-gradient-jet);
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--jet);
+  transition: var(--transition-1);
+}
+
+.contact-item:hover {
+  border-color: var(--orange-yellow-crayola);
+  transform: translateY(-2px);
+}
+
+/* Fix the truncated email on desktop */
+.contact-info :is(.contact-link) {
+  white-space: normal;
+  word-break: break-all;
+}
+
+/* Keep social icons centered and spaced out */
+.social-list {
+  justify-content: center;
+  margin-top: 15px;
+}
+
+/* Adjust for tablet/desktop sizes */
+@media (min-width: 580px) {
+  .contacts-list {
+    grid-template-columns: 1fr 1fr; /* Put email and location side-by-side */
+  }
+}
+
+@media (min-width: 1250px) {
+  .contacts-list {
+    grid-template-columns: 1fr; /* Stack them again on the wide desktop sidebar */
+  }
+}
+/*-----------------------------------*\
+  #MOVE NAVBAR TO TOP (FIXED)
+\*-----------------------------------*/
+
+/* 1. Mobile & Tablet: Navbar fixed to top */
+@media (max-width: 1023px) {
+  .navbar {
+    top: 0;
+    bottom: auto;
+    border-radius: 0 0 12px 12px;
+  }
+  
+  main {
+    margin-top: 85px; /* Pushes content down below the navbar */
+    margin-bottom: 20px;
+  }
+}
+
+/* 2. Tablet specific spacing */
+@media (min-width: 580px) and (max-width: 1023px) {
+  .navbar {
+    border-radius: 0 0 20px 20px;
+  }
+  main {
+    margin-top: 110px; /* More space for the larger tablet navbar */
+  }
+}
+
+/* 3. Desktop: Restore top spacing so it doesn't hit the ceiling */
+@media (min-width: 1024px) {
+  main {
+    margin-top: 60px; /* This fixes the "sticking to the top" issue */
+    margin-bottom: 60px;
+  }
+  
+  .navbar {
+    top: 0;
+    bottom: auto;
+    right: 0;
+    left: auto;
+    border-radius: 0 20px;
+    position: absolute; /* Keeps it neatly inside the top-right of the card */
+  }
+}
