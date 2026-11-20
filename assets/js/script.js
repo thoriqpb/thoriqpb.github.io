@@ -247,3 +247,23 @@ document.addEventListener("DOMContentLoaded", () => {
     else if (e.key === "ArrowLeft") showPrev();
   });
 });
+
+// Resume Preview Modal Logic
+function openResumePreview() {
+  const modal = document.getElementById('resumePreviewModal');
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+function closeResumePreview() {
+  const modal = document.getElementById('resumePreviewModal');
+  modal.classList.remove('active');
+  document.body.style.overflow = ''; // Restore background scrolling
+}
+
+// Close modal if clicking outside the content area
+document.getElementById('resumePreviewModal').addEventListener('click', function(e) {
+  if (e.target === this) {
+    closeResumePreview();
+  }
+});
