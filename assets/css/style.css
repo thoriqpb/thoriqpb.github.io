@@ -2351,3 +2351,46 @@ textarea.form-input::-webkit-resizer { display: none; }
     position: absolute; /* Keeps it neatly inside the top-right of the card */
   }
 }
+
+/*-----------------------------------*\
+  #SIDEBAR ACTION BUTTONS
+\*-----------------------------------*/
+
+.sidebar-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--bg-gradient-jet);
+  border: 1px solid var(--jet);
+  color: var(--white-2);
+  padding: 12px;
+  border-radius: 12px;
+  font-size: var(--fs-7);
+  font-weight: var(--fw-500);
+  transition: var(--transition-1);
+}
+
+.action-btn ion-icon {
+  font-size: 18px;
+  color: var(--orange-yellow-crayola);
+}
+
+.action-btn:hover {
+  border-color: var(--orange-yellow-crayola);
+  transform: translateY(-2px);
+  background: var(--bg-gradient-yellow-2);
+}
+
+/* Adjusting the social list to fit 5 icons nicely */
+.social-list {
+  flex-wrap: wrap; /* Allows icons to wrap if screen is too narrow */
+  gap: 12px;
+}
