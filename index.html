@@ -82,16 +82,28 @@
 
         <!-- New Action Buttons replacing the Email box -->
         <div class="sidebar-actions">
-          <a href="#portfolio" class="action-btn" onclick="document.querySelectorAll('[data-nav-link]')[2].click();">
+          <a href="#portfolio" class="action-btn" onclick="
+            event.preventDefault(); 
+            // 1. Switch to the Portfolio tab
+            document.querySelectorAll('[data-nav-link]')[2].click(); 
+            
+            // 2. Wait 250ms for the tab to fully render, then click ONLY the desktop 'Projects' button
+            setTimeout(() => { 
+              const desktopProjectsBtn = document.querySelectorAll('[data-filter-btn]')[1];
+              if (desktopProjectsBtn) {
+                desktopProjectsBtn.click(); 
+              }
+            }, 250);
+          ">
             <ion-icon name="folder-open-outline"></ion-icon>
             <span>Explore Projects</span>
           </a>
           
           <!-- Update the href below to point to your actual PDF file path -->
-          <a href="./assets/Thoriq_Resume.pdf" download class="action-btn">
-            <ion-icon name="download-outline"></ion-icon>
-            <span>Download Resume</span>
-          </a>
+          <button class="action-btn" onclick="openResumePreview()">
+            <ion-icon name="document-text-outline"></ion-icon>
+            <span>View Resume</span>
+          </button>
         </div>
 
         <div class="separator"></div>
@@ -1813,6 +1825,26 @@
       </article>
 
     </div>
+
+  <!-- Resume Preview Modal -->
+  <div id="resumePreviewModal" class="resume-preview-modal">
+    <div class="resume-preview-content">
+      <div class="resume-preview-header">
+        <h3 class="resume-preview-title">Resume - Thoriq Putra Belligan</h3>
+        <div class="resume-preview-actions">
+          <!-- Update the href here to your actual PDF path -->
+          <a href="./assets/Thoriq_Resume.pdf" download class="preview-download-btn">
+            <ion-icon name="download-outline"></ion-icon> Download
+          </a>
+          <button class="preview-close-btn" onclick="closeResumePreview()">&times;</button>
+        </div>
+      </div>
+      <div class="resume-preview-body">
+        <!-- #toolbar=0 hides the default browser PDF controls for a cleaner look -->
+        <iframe src="./assets/Thoriq_Resume.pdf#toolbar=0" title="Resume Preview"></iframe>
+      </div>
+    </div>
+  </div>
 
   </main>
 
