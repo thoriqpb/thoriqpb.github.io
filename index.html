@@ -76,95 +76,57 @@
 
       </div>
 
-      <div class="sidebar-info_more">
+            <div class="sidebar-info_more">
 
         <div class="separator"></div>
 
-        <ul class="contacts-list">
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-
-              <a href="mailto:thoriqputrabelligan@mail.ugm.ac.id" class="contact-link">thoriqputrabelligan@mail.ugm.ac.id</a>
-            </div>
-
-          </li>
-
-          <!-- <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Phone</p>
-
-              <a href="tel:+12133522795" class="contact-link">+62821******33</a>
-            </div>
-
-          </li> -->
-
-          <!-- <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Birthday</p>
-
-              <time datetime="1982-06-23">Some date on 2005</time>
-            </div>
-
-          </li> -->
-
-          <!-- <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-
-              <address>Yogyakarta, Indonesia</address>
-            </div>
-
-          </li> -->
-
-        </ul>
+        <!-- New Action Buttons replacing the Email box -->
+        <div class="sidebar-actions">
+          <a href="#portfolio" class="action-btn" onclick="document.querySelectorAll('[data-nav-link]')[2].click();">
+            <ion-icon name="folder-open-outline"></ion-icon>
+            <span>Explore Projects</span>
+          </a>
+          
+          <!-- Update the href below to point to your actual PDF file path -->
+          <a href="./assets/Thoriq_Resume.pdf" download class="action-btn">
+            <ion-icon name="download-outline"></ion-icon>
+            <span>Download Resume</span>
+          </a>
+        </div>
 
         <div class="separator"></div>
 
+        <!-- Social List with Email added at the bottom -->
         <ul class="social-list">
 
           <li class="social-item">
-            <a href="https://medium.com/@thoriqpb" class="social-link" target="_blank" rel="noopener">
+            <a href="https://medium.com/@thoriqpb" class="social-link" target="_blank" rel="noopener" title="Medium">
               <ion-icon name="logo-medium"></ion-icon>
             </a>
           </li>
 
           <li class="social-item">
-            <a href="https://github.com/thoriqpb" class="social-link" target="_blank" rel="noopener">
+            <a href="https://github.com/thoriqpb" class="social-link" target="_blank" rel="noopener" title="GitHub">
               <ion-icon name="logo-github"></ion-icon>
             </a>
           </li>
 
           <li class="social-item">
-            <a href="https://www.linkedin.com/in/thoriqpb" class="social-link" target="_blank" rel="noopener">
+            <a href="https://www.linkedin.com/in/thoriqpb" class="social-link" target="_blank" rel="noopener" title="LinkedIn">
               <ion-icon name="logo-linkedin"></ion-icon>
             </a>
           </li>
 
           <li class="social-item">
-            <a href="https://instagram.com/thoriqpb" class="social-link">
+            <a href="https://instagram.com/thoriqpb" class="social-link" target="_blank" rel="noopener" title="Instagram">
               <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <!-- Moved Email Icon here -->
+          <li class="social-item">
+            <a href="mailto:thoriqputrabelligan@mail.ugm.ac.id" class="social-link" title="Email">
+              <ion-icon name="mail-outline"></ion-icon>
             </a>
           </li>
 
@@ -233,10 +195,16 @@
 
         <section class="about-text">
           <p>
-            Final-year Instrumentation & Control Engineering student at Universitas Gadjah Mada, bridging heavy industry and embedded systems. I have hands-on experience calibrating field instruments and monitoring Honeywell DCS operations at PGAS Solution and Perta-Samtan Gas. Outside the plant, I design custom PCBs and write embedded C/C++ code, helping the Gadjah Mada Robotic Team secure a Top 8 national ranking at KRAI 2025. As an ESDM-certified Low-Voltage Engineer, I build safe, reliable automation solutions from the ground up.
+            Final-year student in Instrumentation and Control Engineering Technology at Universitas
+            Gadjah Mada, with a GPA of 3.85/4.00 and a Level 3 Electrical Competency Certificate
+            (Pelaksana Utama, Low Voltage) issued by the Ministry of Energy and Mineral Resources of
+            Indonesia. Experienced in instrumentation, control systems, electrical maintenance, and
+            industrial equipment troubleshooting through Oil &amp; Gas industry internships at
+            Perta-Samtan Gas and PGAS Solution. Familiar with Honeywell DCS operations, instrument
+            calibration and validation, and gas turbine system support. Proficient in C/C++, Python,
+            and PCB design.
           </p>
         </section>
-          </p>
 
           <!-- <p>
             I have hands-on experience with programming languages such as Python, C, and C++, and I'm proficient in tools like MATLAB, KiCad, and SolidWorks for system design, simulation, and modeling.
@@ -564,16 +532,13 @@
           
           <ol class="timeline-list">
             <li class="timeline-item">
-              
-              <h4 class="h4 timeline-item-title">
-                  PT Miconos - Yogyakarta
-              </h4>
-
-              <span>June — Present</span>
-
+              <h4 class="h4 timeline-item-title">PT Miconos - Yogyakarta</h4>
+              <span>August 2026 — Present</span>
               <p class="timeline-text">
-                Collaborated on the reverse engineering of a tissue processor machine. Conducted system testing and operational validation to enhance technology readiness, successfully preparing the equipment for the pre-adoption stage.
-              </p>  <!-- Image gallery -->
+                Collaborate on the reverse engineering of a tissue processor machine, conducting system
+                testing and operational validation to enhance technology readiness and prepare the
+                equipment for the pre-adoption stage.
+              </p>
                     <div class="timeline-images">
                       <img src="./assets/images/miconos.jpeg" alt="Tissue Processor Comparison Result" class="resume-thumb" data-caption="Comparison of the tissue processor results with the manual method at Universitas Gadjah Mada's biology lab." data-full="./assets/images/miconos.jpeg">
                       
@@ -582,15 +547,12 @@
             </li>
 
             <li class="timeline-item">
-  
-              <h4 class="h4 timeline-item-title">
-                  Perta-Samtan Gas - South Sumatera
-              </h4>
-  
+              <h4 class="h4 timeline-item-title">Perta-Samtan Gas - South Sumatera</h4>
               <span>January — February 2026</span>
-  
               <p class="timeline-text">
-                Engaged in natural gas processing operations, gaining hands-on experience in instrumentation calibration, field valve inspection, and turbine maintenance support, while contributing to stable NGL production and safe plant operations.
+                Gained hands-on experience in natural gas processing operations — covering instrumentation
+                calibration, field valve inspection, and turbine maintenance support — while contributing
+                to stable NGL production and safe plant operations.
               </p>
                   <!-- Image gallery -->
                     <div class="timeline-images">
@@ -600,15 +562,13 @@
             </li>
             
             <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">
-                  PGAS Solution - South Sumatera
-              </h4>
-
+              <h4 class="h4 timeline-item-title">PGAS Solution - South Sumatera</h4>
               <span>July — December 2025</span>
-
               <p class="timeline-text">
-                Engaged in an operation project at a gas compressor station, gaining hands-on experience in instrumentation systems, preventive maintenance, and field calibration of pressure and level transmitters. Contributed to real-world operations involving gas turbine systems, engine exchange planning, and DCS monitoring using the Honeywell system.
+                Contributed to gas compressor station operations, gaining hands-on experience in
+                instrumentation systems, preventive maintenance, and field calibration of pressure and
+                level transmitters. Supported gas turbine systems, engine exchange planning, and DCS
+                monitoring via Honeywell systems.
               </p>
                   <!-- Image gallery -->
                     <div class="timeline-images">
@@ -634,15 +594,12 @@
           <ol class="timeline-list">
 
             <li class="timeline-item">
-
               <h4 class="h4 timeline-item-title">Universitas Gadjah Mada - Yogyakarta</h4>
-
-              <span>August 2023 — Present </span>
-
+              <span>August 2023 — Present</span>
               <p class="timeline-text">
-              Focused on studying instrumentation, electronics, and control systems, completing academic projects each year, and gaining real-world experience through multiple internship programs.
+                Pursuing a focused curriculum in instrumentation, electronics, and control systems,
+                complemented by annual academic projects and multiple industry internships.
               </p>
-
             </li>
 
             <!-- <li class="timeline-item">
@@ -689,15 +646,13 @@
           <ol class="timeline-list">
 
             <li class="timeline-item">
-
               <h4 class="h4 timeline-item-title">Gadjah Mada Robotic Team (GMRT) - Yogyakarta</h4>
-
               <span>October 2024 — October 2026</span>
-
               <p class="timeline-text">
-                Responsible for designing and developing strategies and code required to operate the robot mechanism and complete the Abu Robocon 2025 mission.
-                Developed and implemented robotic control code using Teensy, Arduino, and ESP32, leveraging Arduino IDE and Platform IO for efficient programming.
-                Utilized expertise in C/C++ programming, Arduino IDE, and related software to deliver innovative and reliable solutions for robotic systems.
+                Designed and developed control strategies and embedded code for the Abu Robocon 2025
+                mission. Implemented robotic control systems using Teensy, Arduino, and ESP32
+                microcontrollers via Arduino IDE and PlatformIO, leveraging C/C++ to deliver reliable,
+                competition-ready solutions.
               </p>
 
               <div class="timeline-images">
@@ -711,7 +666,7 @@
 
               <h4 class="h4 timeline-item-title">Pionir Permadani - Yogyakarta</h4>
 
-              <span>July 2024 - November 2024</span>
+              <span>July 2024 — November 2024</span>
 
               <p class="timeline-text">
                 Played an active role in mentoring and assisting over 350 new students at the Vocational School of Universitas Gadjah Mada during their campus orientation period, helping them adjust to university life and fostering a sense of community.
@@ -724,14 +679,13 @@
             </li>
 
             <li class="timeline-item">
-
               <h4 class="h4 timeline-item-title">Himpunan Mahasiswa Teknologi Rekayasa Instrumentasi dan Kontrol - Yogyakarta</h4>
-
               <span>December 2023 — February 2025</span>
-
               <p class="timeline-text">
-                Organized and facilitated study sessions for peers and junior students in preparation for midterm and final exams, promoting collaborative learning and academic success.
-                Led and coordinated activities at the TRIK Research and Development Center (TRACER), driving innovation and research initiatives within the program.
+                Organized and facilitated study sessions for peers and junior students ahead of midterm
+                and final exams, promoting collaborative learning and academic success. Led and coordinated
+                activities at the TRIK Research and Development Center (TRACER), driving innovation and
+                research initiatives within the program.
               </p>
 
               <div class="timeline-images">
@@ -745,7 +699,6 @@
 
         </section>
 
-                <!-- CERTIFICATIONS -->
                 <!-- CERTIFICATIONS -->
         <section class="timeline">
           <div class="title-wrapper">
