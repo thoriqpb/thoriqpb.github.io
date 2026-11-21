@@ -2521,3 +2521,64 @@ textarea.form-input::-webkit-resizer { display: none; }
   .resume-preview-title { display: none; /* Hide title on small screens to save space */ }
   .resume-preview-header { justify-content: flex-end; }
 }
+
+/* === Enhanced Project Modal Details & Diagrams === */
+.modal-content {
+  max-width: 760px; /* Slightly wider for readable technical diagrams */
+}
+
+.modal-details h4 {
+  color: var(--orange-yellow-crayola);
+  font-size: var(--fs-4);
+  font-weight: var(--fw-600);
+  margin-top: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.modal-details p {
+  margin-bottom: 0.85rem;
+}
+
+.modal-details code {
+  background: var(--onyx);
+  color: var(--orange-yellow-crayola);
+  padding: 2px 6px;
+  border-radius: 5px;
+  font-size: 0.9em;
+}
+
+.modal-spec-list {
+  margin: 0.5rem 0 1rem 1.25rem;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+.modal-spec-list li {
+  list-style: disc; /* Overrides global li { list-style: none; } */
+  margin-bottom: 0.45rem;
+  text-align: justify;
+}
+
+.modal-figure {
+  margin: 1.1rem 0 1.3rem 0;
+  background: var(--eerie-black-1);
+  border: 1px solid var(--jet);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.modal-detail-img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+}
+
+.modal-caption {
+  margin-top: 0.6rem;
+  font-size: var(--fs-7);
+  color: var(--light-gray-70);
+  text-align: center;
+  font-style: italic;
+  line-height: 1.4;
+}
