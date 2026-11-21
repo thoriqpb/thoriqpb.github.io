@@ -763,27 +763,44 @@ main {
   overflow: hidden;
 }
 
-.clients-item {
-  flex: 0 0 auto;
-  min-width: unset !important; 
-  width: auto;
-}
-
+/* Normal logos: subtle crisp silver rim */
 .clients-item img {
   height: 90px;
   width: auto;
   max-width: 150px;
   object-fit: contain;
   transition: var(--transition-1);
-  
-  /* Adds a very subtle white glow so dark logos (like Miconos) don't disappear */
-  filter: drop-shadow(0px 0px 3px rgba(255, 255, 255, 0.15)); 
+  filter:
+    drop-shadow(0.75px 0 0 rgba(215, 215, 215, 0.22))
+    drop-shadow(-0.75px 0 0 rgba(215, 215, 215, 0.22))
+    drop-shadow(0 0.75px 0 rgba(215, 215, 215, 0.22))
+    drop-shadow(0 -0.75px 0 rgba(215, 215, 215, 0.22));
 }
 
-.clients-item img:hover { 
+.clients-item img:hover {
   transform: scale(1.05);
-  /* Make the glow slightly brighter on hover */
-  filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.3)); 
+  filter:
+    drop-shadow(1px 0 0 rgba(245, 245, 245, 0.55))
+    drop-shadow(-1px 0 0 rgba(245, 245, 245, 0.55))
+    drop-shadow(0 1px 0 rgba(245, 245, 245, 0.55))
+    drop-shadow(0 -1px 0 rgba(245, 245, 245, 0.55));
+}
+
+/* Dark logos: full-strength crisp gray sticker outline */
+.clients-item img.dark-logo {
+  filter:
+    drop-shadow(1px 0 0 rgba(215, 215, 215, 0.9))
+    drop-shadow(-1px 0 0 rgba(215, 215, 215, 0.9))
+    drop-shadow(0 1px 0 rgba(215, 215, 215, 0.9))
+    drop-shadow(0 -1px 0 rgba(215, 215, 215, 0.9));
+}
+
+.clients-item img.dark-logo:hover {
+  filter:
+    drop-shadow(1.5px 0 0 rgba(245, 245, 245, 1))
+    drop-shadow(-1.5px 0 0 rgba(245, 245, 245, 1))
+    drop-shadow(0 1.5px 0 rgba(245, 245, 245, 1))
+    drop-shadow(0 -1.5px 0 rgba(245, 245, 245, 1));
 }
 
 /* Mobile specific: turn it back into a swipeable row */
