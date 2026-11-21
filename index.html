@@ -1960,19 +1960,35 @@
 
   <!-- Place this script after your main content, before </body> -->
   <script>
-    VANTA.NET({
-      el: "#vanta-bg",
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 200.00,
-      minWidth: 200.00,
-      scale: 1.00,
-      scaleMobile: 1.00,
-      color: 0x339cff,
-      backgroundColor: 0x070707,
-      spacing: 15.00
-    })
+    (function () {
+      const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      let vantaEffect = null;
+
+      function applyVanta() {
+        if (vantaEffect) vantaEffect.destroy();
+
+        const isDark = darkQuery.matches;
+
+        vantaEffect = VANTA.NET({
+          el: "#vanta-bg",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          // Dark mode: bright amber on near-black teal
+          // Light mode: darker amber on soft teal-white
+          color:           isDark ? 0xff9a2e : 0xc0721a,
+          backgroundColor: isDark ? 0x090b0b : 0xf2f6f7,
+          spacing: 15.00
+        });
+      }
+
+      applyVanta();
+      darkQuery.addEventListener('change', applyVanta);
+    })();
   </script>
 
   <!--
