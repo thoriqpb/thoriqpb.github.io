@@ -18,65 +18,67 @@
 :root {
 
   /**
-   * colors
+   * colors — dark mode (default), Option D "Dark Teal + Amber"
    */
 
   /* gradient */
 
   --bg-gradient-onyx: linear-gradient(
     to bottom right, 
-    hsl(220, 30%, 18%) 3%,   /* deep blue */
-    hsl(220, 20%, 8%) 97%    /* almost black */
+    hsl(190, 15%, 15%) 3%, 
+    hsl(190, 12%, 7%) 97%
   );
   --bg-gradient-jet: linear-gradient(
     to bottom right, 
-    hsla(220, 30%, 15%, 0.251) 0%, 
-    hsla(220, 20%, 8%, 0) 100%
-  ), hsl(220, 20%, 10%);
+    hsla(190, 15%, 13%, 0.251) 0%, 
+    hsla(190, 12%, 7%, 0) 100%
+  ), hsl(190, 12%, 9%);
   --bg-gradient-yellow-1: linear-gradient(
     to bottom right, 
-    hsl(210, 100%, 60%) 0%,   /* blue accent */
-    hsla(210, 100%, 60%, 0) 50%
+    hsl(32, 95%, 55%) 0%, 
+    hsla(32, 95%, 55%, 0) 50%
   );
   --bg-gradient-yellow-2: linear-gradient(
     135deg, 
-    hsla(210, 100%, 60%, 0.251) 0%, 
-    hsla(210, 100%, 60%, 0) 59.86%  
-  ), hsl(220, 20%, 10%);
+    hsla(32, 95%, 55%, 0.251) 0%, 
+    hsla(32, 95%, 55%, 0) 59.86%  
+  ), hsl(190, 12%, 9%);
   --border-gradient-onyx: linear-gradient(
     to bottom right, 
-    hsl(220, 30%, 25%) 0%, 
-    hsla(220, 30%, 25%, 0) 50%
+    hsl(190, 18%, 22%) 0%, 
+    hsla(190, 18%, 22%, 0) 50%
   );
   --text-gradient-yellow: linear-gradient(
     to right, 
-    hsl(210, 100%, 70%), 
-    hsl(220, 100%, 60%)
+    hsl(38, 100%, 65%), 
+    hsl(22, 95%, 52%)
   );
 
   /* solid */
 
-  --jet: hsl(220, 20%, 18%);
-  --onyx: hsl(220, 30%, 15%);
-  --eerie-black-1: hsl(220, 20%, 10%);
-  --eerie-black-2: hsl(220, 20%, 8%);
-  --smoky-black: hsl(220, 20%, 5%);
+  --jet: hsl(190, 12%, 18%);
+  --onyx: hsl(190, 14%, 15%);
+  --eerie-black-1: hsl(190, 12%, 9%);
+  --eerie-black-2: hsl(190, 12%, 7%);
+  --smoky-black: hsl(190, 10%, 4%);
   --white-1: hsl(0, 0%, 100%);
   --white-2: hsl(0, 0%, 98%);
-  --orange-yellow-crayola: hsl(210, 100%, 60%); /* blue accent */
-  --vegas-gold: hsl(210, 54%, 58%);             /* blue-gold accent */
-  --light-gray: hsl(220, 10%, 70%);
-  --light-gray-70: hsla(220, 10%, 70%, 0.7);
-  --bittersweet-shimmer: hsl(210, 43%, 51%);
+  --orange-yellow-crayola: hsl(32, 95%, 55%);
+  --vegas-gold: hsl(35, 65%, 58%);
+  --light-gray: hsl(190, 8%, 72%);
+  --light-gray-70: hsla(190, 8%, 72%, 0.7);
+  --bittersweet-shimmer: hsl(352, 75%, 58%);
+
+  /* theme-aware helpers */
+  --navbar-bg: hsla(190, 12%, 17%, 0.75);
+  --selection-fg: hsl(190, 10%, 4%);
 
   /**
    * typography
    */
 
-  /* font-family */
   --ff-poppins: 'Poppins', sans-serif;
 
-  /* font-size */
   --fs-1: 24px;
   --fs-2: 18px;
   --fs-3: 17px;
@@ -86,7 +88,6 @@
   --fs-7: 13px;
   --fs-8: 11px;
 
-  /* font-weight */
   --fw-300: 300;
   --fw-400: 400;
   --fw-500: 500;
@@ -109,6 +110,68 @@
   --transition-1: 0.25s ease;
   --transition-2: 0.5s ease-in-out;
 
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+
+    /* gradient — light teal-tinted */
+    --bg-gradient-onyx: linear-gradient(
+      to bottom right, 
+      hsl(190, 25%, 98%) 3%, 
+      hsl(190, 18%, 93%) 97%
+    );
+    --bg-gradient-jet: linear-gradient(
+      to bottom right, 
+      hsla(190, 20%, 94%, 0.4) 0%, 
+      hsla(190, 18%, 93%, 0) 100%
+    ), hsl(190, 18%, 95%);
+    --bg-gradient-yellow-1: linear-gradient(
+      to bottom right, 
+      hsl(28, 85%, 42%) 0%, 
+      hsla(28, 85%, 42%, 0) 50%
+    );
+    --bg-gradient-yellow-2: linear-gradient(
+      135deg, 
+      hsla(28, 85%, 42%, 0.251) 0%, 
+      hsla(28, 85%, 42%, 0) 59.86%  
+    ), hsl(190, 18%, 95%);
+    --border-gradient-onyx: linear-gradient(
+      to bottom right, 
+      hsl(190, 15%, 82%) 0%, 
+      hsla(190, 15%, 82%, 0) 50%
+    );
+    --text-gradient-yellow: linear-gradient(
+      to right, 
+      hsl(30, 90%, 48%), 
+      hsl(20, 88%, 38%)
+    );
+
+    /* solid */
+    --jet: hsl(190, 15%, 85%);
+    --onyx: hsl(190, 22%, 94%);
+    --eerie-black-1: hsl(190, 22%, 97%);
+    --eerie-black-2: hsl(0, 0%, 100%);
+    --smoky-black: hsl(190, 25%, 96%);
+    --white-1: hsl(190, 28%, 10%);
+    --white-2: hsl(190, 25%, 13%);
+    --orange-yellow-crayola: hsl(28, 85%, 42%);
+    --vegas-gold: hsl(28, 65%, 38%);
+    --light-gray: hsl(190, 14%, 34%);
+    --light-gray-70: hsla(190, 14%, 34%, 0.7);
+    --bittersweet-shimmer: hsl(352, 75%, 48%);
+
+    /* theme-aware helpers */
+    --navbar-bg: hsla(190, 25%, 97%, 0.85);
+    --selection-fg: hsl(0, 0%, 100%);
+
+    /* softer shadows on light surfaces */
+    --shadow-1: -4px 8px 24px hsla(190, 30%, 20%, 0.08);
+    --shadow-2: 0 16px 30px hsla(190, 30%, 20%, 0.08);
+    --shadow-3: 0 16px 40px hsla(190, 30%, 20%, 0.10);
+    --shadow-4: 0 25px 50px hsla(190, 30%, 20%, 0.06);
+    --shadow-5: 0 24px 80px hsla(190, 30%, 20%, 0.10);
+  }
 }
 
 
@@ -148,7 +211,7 @@ input, textarea {
 
 ::selection {
   background: var(--orange-yellow-crayola);
-  color: var(--smoky-black);
+  color: var(--selection-fg);
 }
 
 :focus { outline-color: var(--orange-yellow-crayola); }
@@ -459,7 +522,7 @@ main {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: hsla(240, 1%, 17%, 0.75);
+  background: var(--navbar-bg);
   backdrop-filter: blur(10px);
   border: 1px solid var(--jet);
   border-radius: 12px 12px 0 0;
@@ -1202,6 +1265,10 @@ main {
   height: 100%;
   border: none;
   filter: grayscale(1) invert(1);
+}
+
+@media (prefers-color-scheme: light) {
+  .mapbox iframe { filter: none; }
 }
 
 .contact-form { margin-bottom: 10px; }
@@ -1978,13 +2045,13 @@ textarea.form-input::-webkit-resizer { display: none; }
 }
 
 .modal-content {
-  background: var(--eerie-black, #1a1a1a);
-  color: var(--white, #fff);
+  background: var(--eerie-black-2); /* Fixed: uses proper variable */
+  color: var(--light-gray);         /* Fixed: readable in both modes */
   border-radius: 14px;
   max-width: 650px;
   width: 90%;
   padding: 2rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--shadow-5);
   text-align: left;
   position: relative;
   overflow-y: auto;
@@ -2007,18 +2074,18 @@ textarea.form-input::-webkit-resizer { display: none; }
   right: 18px;
   font-size: 26px;
   cursor: pointer;
-  color: var(--white, #ffffff);
+  color: var(--white-1); /* Fixed */
   transition: 0.2s;
 }
 
 .close-btn:hover {
-  color: #ff5555;
+  color: var(--bittersweet-shimmer); /* Replaced hardcoded #ff5555 */
 }
 
 .modal-details {
   margin-top: 1rem;
   line-height: 1.6;
-  color: #ddd;
+  color: var(--light-gray); /* Fixed: was hardcoded #ddd */
 }
 
 @keyframes fadeIn {
@@ -2027,8 +2094,9 @@ textarea.form-input::-webkit-resizer { display: none; }
 }
 
 #modalTitle {
-  margin-top: -10px; /* move upward slightly */
-  margin-bottom: 0.75rem; /* space below the title */
+  color: var(--white-2); /* Fixed: Titles need to be the brightest text */
+  margin-top: -10px; 
+  margin-bottom: 0.75rem; 
 }
 
 .timeline-images {
@@ -2071,13 +2139,13 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 /* Frame / content */
 .resume-modal-content {
-  background: var(--eerie-black, #1a1a1a);
-  color: var(--white, #fff);
+  background: var(--eerie-black-2); /* Fixed */
+  color: var(--light-gray);         /* Fixed */
   border-radius: 14px;
   max-width: 900px;
   width: 90%;
   padding: 1.5rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--shadow-5);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -2098,19 +2166,19 @@ textarea.form-input::-webkit-resizer { display: none; }
 .resume-modal-title {
   font-weight: var(--fw-600);
   font-size: var(--fs-2);
-  color: var(--white, #fff);
+  color: var(--white-2); /* Fixed */
   text-align: left;
 }
 
 .resume-close-btn {
   font-size: 28px;
   cursor: pointer;
-  color: var(--white, #fff);
+  color: var(--white-1); /* Fixed */
   transition: 0.2s;
 }
 
 .resume-close-btn:hover {
-  color: #ff5555;
+  color: var(--bittersweet-shimmer);
 }
 
 /* Image */
@@ -2125,7 +2193,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 /* Caption */
 .resume-modal-caption {
   font-size: var(--fs-4);
-  color: #ddd;
+  color: var(--light-gray); /* Fixed */
   text-align: center;
   margin-top: 0.5rem;
   padding: 0 0.5rem;
@@ -2137,9 +2205,9 @@ textarea.form-input::-webkit-resizer { display: none; }
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(30, 30, 30, 0.8);
-  color: #fff;
-  border: none;
+  background: var(--onyx); /* Fixed: was hardcoded dark gray */
+  color: var(--white-1);   /* Fixed */
+  border: 1px solid var(--jet);
   padding: 8px 14px;
   border-radius: 8px;
   cursor: pointer;
@@ -2148,7 +2216,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 .resume-prev-btn:hover,
 .resume-next-btn:hover {
-  background: rgba(50, 50, 50, 0.9);
+  background: var(--jet);
 }
 
 .resume-prev-btn { left: 10px; }
@@ -2549,7 +2617,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 .modal-spec-list {
   margin: 0.5rem 0 1rem 1.25rem;
-  color: #ddd;
+  color: var(--light-gray);
   line-height: 1.6;
 }
 
