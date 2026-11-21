@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Standard SEO -->
-  <title>Thoriq Putra Belligan (thoriqpb) | Portfolio</title>
+  <title>Thoriq Putra Belligan's Portfolio</title>
   <meta name="description" content="The official portfolio of Thoriq Putra Belligan, also known online as thoriqpb. Instrumentation & Control Engineering student at Universitas Gadjah Mada.">
   <meta name="keywords" content="thoriqpb, Thoriq Putra Belligan, Thoriq, Instrumentation, Control Engineering, UGM, Portfolio">
   <meta name="author" content="Thoriq Putra Belligan">
@@ -1018,27 +1018,57 @@
                 onclick="openModal(event, this)"
                 data-title="Line Follower Robot with Pixy2 Cam"
                 data-image="./assets/images/pixyLineDetection.gif"
-                data-description="A self-driving car using an ESP32 microcontroller, a Pixy2 camera for line tracking, and a PID controller for steering and motor control."
+                data-description="A self-driving car prototype powered by an ESP32 microcontroller, featuring a Pixy2 vision sensor for high-speed line vector tracking, a custom integrated PCB, and an on-device OLED menu for real-time PID and servo tuning."
                 data-details="
                   <h4>Project Overview</h4>
                   <p style='text-align: justify;'>
-                    This project presents a <strong>line-follower robot</strong> powered by an <strong>ESP32 microcontroller</strong>, equipped with a <strong>Pixy2 camera</strong> for vision-based line detection and an <strong>OLED display</strong> for real-time interface feedback. 
-                    The system includes an interactive, <strong>button-based menu</strong> that allows on-device configuration of <strong>PID parameters</strong> and <strong>servo control</strong> for precise and adaptive navigation.
+                    This project presents an autonomous <strong>line-follower robot</strong> powered by an <strong>ESP32 microcontroller</strong>, equipped with a <strong>Pixy2 camera</strong> for vision-based line detection and an <strong>OLED display</strong> for real-time telemetry and user interface feedback. 
+                    Through the integration of embedded control, computer vision, and custom PCB hardware, the prototype demonstrates how compact, low-cost hardware can achieve reliable semi-autonomous navigation and adaptive steering.
                   </p>
 
+                  <h4>1. Hardware Architecture &amp; Custom PCB</h4>
                   <p style='text-align: justify;'>
-                    The menu interface is operated using <strong>four physical buttons</strong> that enable users to adjust <strong>proportional (P)</strong>, <strong>integral (I)</strong>, and <strong>derivative (D)</strong> constants directly on the device, 
-                    eliminating the need for external programming. This design enhances tuning efficiency during testing and improves control performance in dynamic environments.
+                    To eliminate loose jumper wiring and improve signal reliability, the electronics were consolidated onto a <strong>custom-designed main PCB</strong> divided into five functional subsystems:
                   </p>
+                  <ul class='modal-spec-list'>
+                    <li><strong>Control System (Kontrol Sistem):</strong> An <strong>ESP32</strong> serves as the central processing unit, handling Pixy2 SPI/I2C data acquisition, PID calculations, OLED menu rendering, and PWM actuator signals.</li>
+                    <li><strong>Sensory &amp; Visual Interface (Sistem Sensorik &amp; Visual):</strong> Combines the <strong>Pixy2 camera</strong> for track perception with an <strong>OLED screen</strong> and <strong>four tactile pushbuttons</strong> for standalone parameter configuration.</li>
+                    <li><strong>Power Management (Suplai Daya):</strong> Powered by an <strong>11.1V LiPo battery</strong> stepped down through a <strong>5V DC-DC buck converter</strong> to provide stable regulated power for the logic and servo rails.</li>
+                    <li><strong>Drive Speed Control (Kontrol Kecepatan):</strong> Dedicated motor driver circuitry independently regulates the left (<em>Motor kiri</em>) and right (<em>Motor kanan</em>) DC gearmotors for differential speed control.</li>
+                    <li><strong>Directional &amp; Gimbal Control (Kendali Arah):</strong> Three PWM servo channels (<em>Servo A, B, and C</em>) manage directional steering and multi-axis camera orientation.</li>
+                  </ul>
 
+                  <figure class='modal-figure'>
+                    <img src='./assets/images/Diagram-blok-Self-driving-car-robot.jpg' alt='Hardware Block Diagram and Custom PCB Layout' class='modal-detail-img'>
+                    <figcaption class='modal-caption'>System block diagram mapping the custom PCB subsystems, power regulation, sensors, and actuators.</figcaption>
+                  </figure>
+
+                  <h4>2. Mechanical Chassis Design</h4>
                   <p style='text-align: justify;'>
-                    Through the integration of <strong>embedded control</strong>, <strong>computer vision</strong>, and <strong>user interface design</strong>, this prototype demonstrates how <strong>low-cost hardware</strong> can achieve 
-                    semi-autonomous navigation and adaptive steering behavior.
+                    The robot is built on a compact 4-wheel differential-drive chassis measuring <strong>33 cm &times; 21 cm</strong>. The custom green PCB is mounted centrally on the upper deck for balanced weight distribution and easy access to the OLED screen and tuning buttons, while a dedicated front bracket positions the Pixy2 camera at an optimal downward angle to maximize track look-ahead distance.
                   </p>
 
-                  <p style='margin-top: 1rem; text-align: justify;'>
-                    <a href='https://github.com/thoriqpb/Self-Driving-Car-with-Pixy2' target='_blank' style='color:#5bc0de; text-decoration:underline;'>
-                      View on GitHub
+                  <figure class='modal-figure'>
+                    <img src='./assets/images/Mekanik-Self-driving-car-robot.jpg' alt='3D CAD Mechanical Views of the Robot Chassis' class='modal-detail-img'>
+                    <figcaption class='modal-caption'>3D CAD mechanical layout showing bottom (Tampak Bawah), top (Tampak Atas, 33 cm &times; 21 cm), and isometric side (Tampak Samping) views.</figcaption>
+                  </figure>
+
+                  <h4>3. Vision Tracking &amp; On-Device PID Tuning</h4>
+                  <p style='text-align: justify;'>
+                    Using the Pixy2 camera's built-in <code>line_tracking</code> firmware running at <strong>~61.6 FPS</strong>, the vision processor isolates the dark track against the background and computes a real-time <strong>heading vector</strong> (red arrow) representing lateral offset and angular trajectory.
+                  </p>
+                  <p style='text-align: justify;'>
+                    The ESP32 feeds this vector error into a closed-loop <strong>PID controller</strong> to continuously adjust motor speeds and steering response. Using the <strong>four physical buttons</strong> and OLED menu, <strong>Proportional (P)</strong>, <strong>Integral (I)</strong>, and <strong>Derivative (D)</strong> constants—as well as servo angles—can be tuned directly on the robot without reflashing code.
+                  </p>
+
+                  <figure class='modal-figure'>
+                    <img src='./assets/images/Sistem-Pixy.jpg' alt='PixyMon Line Vector Detection Interface' class='modal-detail-img'>
+                    <figcaption class='modal-caption'>PixyMon real-time line tracking at ~61.6 FPS: raw camera feed with detected vector (left) and extracted vector output (right).</figcaption>
+                  </figure>
+
+                  <p style='margin-top: 1.25rem; text-align: justify;'>
+                    <a href='https://github.com/thoriqpb/Self-Driving-Car-with-Pixy2' target='_blank' rel='noopener noreferrer' style='color:#5bc0de; text-decoration:underline;'>
+                      View Source Code &amp; Documentation on GitHub &rarr;
                     </a>
                   </p>
                 ">
@@ -1061,31 +1091,100 @@
                 onclick="openModal(event, this)"
                 data-title="Line Maze Robot"
                 data-image="./assets/images/demoLineMaze.gif"
-                data-description="An intelligent line-following robot designed to find the fastest route in a black-and-white maze using custom PCBs and pathfinding algorithms."
+                data-description="An intelligent line-following and maze-solving robot built around three modular custom PCBs, an 8-channel multiplexed photodiode array, opto-isolated MOSFET H-bridge drivers, and closed-loop PID control."
                 data-details="
                   <h4>Project Overview</h4>
                   <p style='text-align: justify;'>
-                    The <strong>Line Maze Robot</strong> is an intelligent <strong>line-following robot</strong> designed to navigate and determine the <strong>fastest path</strong> through a <strong>black-and-white arena</strong>. 
-                    Built using <strong>three custom PCBs</strong>, this robot combines <strong>sensor systems</strong>, <strong>motor control</strong>, and an <strong>interactive user interface</strong> for efficient autonomous movement and real-time decision-making.
+                    The <strong>Line Maze Robot</strong> is an autonomous mobile robot engineered to navigate, map, and compute the <strong>fastest path</strong> through a black-and-white grid maze. 
+                    Built on a custom <strong>three-board modular PCB architecture</strong>, the system integrates multiplexed optical sensing, opto-isolated high-current motor control, closed-loop <strong>PID steering</strong>, and an on-board <strong>OLED interface</strong> for real-time tuning and pathfinding execution.
                   </p>
-
-                  <h4>🚀 Project Goal</h4>
-                  <p style='text-align: justify;'>
-                    The main goal of this project is to enable the robot to:
-                  </p>
-                  <ul style='text-align: justify; padding-left: 1.2rem;'>
-                    <li><strong>Detect intersections and paths</strong> on a black-and-white grid using a sensor array.</li>
-                    <li><strong>Record and analyze paths</strong> through internal logic and memory mapping.</li>
-                    <li><strong>Determine and follow the fastest route</strong> to complete the arena efficiently.</li>
+                  <ul class='modal-spec-list'>
+                    <li><strong>Intersection &amp; Path Detection:</strong> Uses an 8-channel optical sensor array to distinguish straight tracks, turns, T-junctions, and dead ends.</li>
+                    <li><strong>Path Memory &amp; Optimization:</strong> Records turns during the exploration run and simplifies the route in memory to eliminate dead-end branches.</li>
+                    <li><strong>High-Speed Shortest-Path Execution:</strong> Executes the optimized route on subsequent runs using tuned PID velocity control.</li>
                   </ul>
 
+                  <h4>1. System Architecture</h4>
                   <p style='text-align: justify;'>
-                    This project showcases the integration of <strong>real-time path analysis</strong> and <strong>hardware-level optimization</strong>, providing a compact yet powerful demonstration of autonomous maze-solving behavior.
+                    The robot operates as a closed-loop embedded control system divided into five interconnected subsystems: the <strong>Sensor Subsystem</strong> (8-channel photodiode array + <code>74HC4051</code> multiplexer) observes the line maze environment; the <strong>User Interface Subsystem</strong> (OLED display + tactile buttons) feeds configuration commands into the <strong>Control Subsystem</strong> (<code>Arduino Nano</code>); and the <strong>Actuator Subsystem</strong> (H-bridge driver + dual DC gearmotors) drives the <strong>Mechanical Subsystem</strong> to continuously close the position feedback loop.
                   </p>
 
-                  <p style='margin-top: 1rem; text-align: justify;'>
-                    <a href='https://github.com/thoriqpb/Line-Mesh-Project' target='_blank' style='color:#5bc0de; text-decoration:underline;'>
-                      View on GitHub
+                  <figure class='modal-figure'>
+                    <img src='./assets/images/LF_implementasi.png' alt='System Architecture Block Diagram' class='modal-detail-img'>
+                    <figcaption class='modal-caption'>Closed-loop system block diagram illustrating interactions across the sensor, UI, control, actuator, and mechanical subsystems.</figcaption>
+                  </figure>
+
+                  <h4>2. Mechanical Chassis Design</h4>
+                  <p style='text-align: justify;'>
+                    The mechanical platform is built from a lightweight, rigid <strong>acrylic chassis measuring 18 &times; 13 &times; 6 cm</strong>, engineered for low rotational inertia and balanced component placement:
+                  </p>
+                  <ul class='modal-spec-list'>
+                    <li><strong>Sensor Wing Placement:</strong> The 8-photodiode array is mounted underneath the front overhang, matched to the <strong>2 cm line width</strong> for crisp edge and intersection detection.</li>
+                    <li><strong>Front Balancer:</strong> A <strong>1 cm diameter ball caster</strong> supports the front assembly while minimizing sliding friction during sharp 90&deg; and 180&deg; turns.</li>
+                    <li><strong>Differential Drive System:</strong> Two <strong>5 cm diameter wheels</strong> driven by geared DC motors provide high traction on straightaways and rapid differential pivoting.</li>
+                  </ul>
+
+                  <figure class='modal-figure'>
+                    <img src='./assets/images/LF_desainMekanis.png' alt='Mechanical Chassis CAD Layout' class='modal-detail-img'>
+                    <figcaption class='modal-caption'>Top and bottom CAD views highlighting the 18 &times; 13 &times; 6 cm acrylic chassis, front sensor placement, 1 cm ball caster, and 5 cm geared drive wheels.</figcaption>
+                  </figure>
+
+                  <h4>3. Modular Custom PCB Design</h4>
+                  <p style='text-align: justify;'>
+                    Rather than relying on a single monolithic board or breadboard wiring, the electronics are split into <strong>three dedicated custom PCBs</strong>—<strong>PCB Sensor</strong>, <strong>PCB H-Bridge</strong>, and <strong>PCB Arduino</strong>—isolating noisy high-current motor switching from sensitive analog sensor readings and microcontroller logic.
+                  </p>
+
+                  <figure class='modal-figure'>
+                    <img src='./assets/images/LF_desainElektronis1.png' alt='3D CAD Overview of Three Custom PCBs' class='modal-detail-img'>
+                    <figcaption class='modal-caption'>3D CAD models of the three custom PCBs: Sensor Array PCB (left), Opto-Isolated H-Bridge &amp; Power PCB (center), and Microcontroller &amp; UI PCB (right).</figcaption>
+                  </figure>
+
+                  <p style='text-align: justify;'>
+                    <strong>A. Sensor Array PCB:</strong> Features <strong>8 IR LED emitters</strong> paired with <strong>8 photodiode receivers</strong> routed through a <code>74HC4051</code> analog multiplexer to conserve microcontroller ADC pins. Using Ohm's Law (<em>V = IR</em>), <strong>330 &Omega;</strong> current-limiting resistors set LED forward current to ~6 mA (<em>V<sub>R</sub> = 2V, V<sub>f</sub> = 3V</em> from a 5V rail) for consistent illumination, while <strong>10 k&Omega;</strong> load resistors convert ~50 &mu;A photocurrent into a clean ~0.5V analog swing.
+                  </p>
+
+                  <figure class='modal-figure'>
+                    <img src='./assets/images/LF_desainElektronis2.png' alt='Sensor PCB Layout and Fabricated Board' class='modal-detail-img'>
+                    <figcaption class='modal-caption'>8-channel optical sensor PCB design, trace routing, physical assembly, and component sizing with the 74HC4051 multiplexer.</figcaption>
+                  </figure>
+
+                  <p style='text-align: justify;'>
+                    <strong>B. Opto-Isolated H-Bridge &amp; Power PCB:</strong> Built with complementary <code>IRLB3034</code> N-channel MOSFETs (ultra-low <em>R<sub>DS(on)</sub></em> &approx; 0.0035 &Omega;, 195A rating) and <code>IRF9540</code> P-channel MOSFETs (23A, -100V breakdown) for bidirectional motor control. <code>PC817</code> optocouplers galvanically isolate Arduino PWM signals from motor voltage transients, flyback diodes (<em>D3&ndash;D8</em>) suppress inductive spikes, and an onboard <code>LM2596S</code> buck converter with a 470 &mu;H inductor steps down 12V battery power to a regulated 5V logic rail.
+                  </p>
+
+                  <figure class='modal-figure'>
+                    <img src='./assets/images/LF_desainElektronis3.png' alt='H-Bridge Motor Driver PCB and Components' class='modal-detail-img'>
+                    <figcaption class='modal-caption'>Custom H-Bridge and LM2596S power regulation PCB featuring IRLB3034/IRF9540 MOSFETs and PC817 optocoupler isolation.</figcaption>
+                  </figure>
+
+                  <p style='text-align: justify;'>
+                    <strong>C. Microcontroller &amp; User Interface PCB:</strong> Houses the <code>Arduino Nano</code>, a <code>GME12864-49</code> <strong>OLED display</strong>, <strong>four mini pushbuttons</strong>, and an audio <strong>buzzer</strong>, allowing direct menu navigation, sensor calibration, and PID parameter adjustments on the track without re-uploading firmware.
+                  </p>
+
+                  <figure class='modal-figure'>
+                    <img src='./assets/images/LF_desainElektronis4.png' alt='Microcontroller and OLED UI PCB' class='modal-detail-img'>
+                    <figcaption class='modal-caption'>Microcontroller PCB layout and assembled board integrating the Arduino Nano, GME12864-49 OLED screen, four tactile buttons, and buzzer.</figcaption>
+                  </figure>
+
+                  <h4>4. Closed-Loop PID Control &amp; Motor Mixing</h4>
+                  <p style='text-align: justify;'>
+                    Lateral track error <em>e(t)</em> is computed as the normalized weighted sum across the 8 optical sensors and processed through a continuous-time <strong>PID control law</strong>:
+                  </p>
+                  <p style='text-align: center; font-family: monospace; background: var(--onyx); padding: 8px; border-radius: 6px;'>
+                    u(t) = K<sub>p</sub>&middot;e(t) + K<sub>i</sub>&middot;&int;e(&tau;)d&tau; + K<sub>d</sub>&middot;(de(t)/dt)
+                  </p>
+                  <p style='text-align: justify;'>
+                    The resulting control adjustment is applied differentially to the left and right PWM motor channels with clamping and hardware trim compensation (<code>LeftSpeed = constrain(SPEED_BASE + Adjustment, 0, 255)</code> and <code>RightSpeed = constrain(SPEED_BASE - Adjustment + 15, 0, 255)</code>) to ensure straight tracking and smooth high-speed cornering.
+                  </p>
+
+                  <figure class='modal-figure'>
+                    <img src='./assets/images/LF_kontrol.png' alt='PID Control Loop and Motor PWM Mixing Diagram' class='modal-detail-img'>
+                    <figcaption class='modal-caption'>Closed-loop PID control block diagram showing weighted-sum error calculation, P/I/D terms, and constrained PWM motor mixing.</figcaption>
+                  </figure>
+
+                  <p style='margin-top: 1.25rem; text-align: justify;'>
+                    <a href='https://github.com/thoriqpb/Line-Mesh-Project' target='_blank' rel='noopener noreferrer' style='color:#5bc0de; text-decoration:underline;'>
+                      View Source Code &amp; PCB Files on GitHub &rarr;
                     </a>
                   </p>
                 ">
